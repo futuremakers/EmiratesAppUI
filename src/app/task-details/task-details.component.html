@@ -1,0 +1,15 @@
+<div *ngIf="task" >
+	<h2>{{task.name}} details:</h2>
+	<div>
+		<label>id: </label> {{task.id}}
+	</div>
+	<div>
+		<label>Name: </label> {{task.name}}
+	</div>
+	<div>
+		<label>Status: </label> {{task.status}}
+	</div>
+	<button class="btn btn-danger" (click)="delete()">Delete  </button> 
+	<button class="btn btn-danger" (click)="onSelect(task)"> Edit</button>
+</div>
+<task-update [task]="selectedTask"></task-update> 

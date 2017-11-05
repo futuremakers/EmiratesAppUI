@@ -1,0 +1,36 @@
+<h3>Create Task Form</h3>
+<div [hidden]="submitted" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()" ngNativeValidate>
+		<div class="form-group">
+			<label for="name">Name</label> <input type="text"
+				class="form-control" id="name" required
+				[(ngModel)]="task.name" name="name">
+		</div>
+ 
+		
+ 	<div class="form-group">
+ 		<label for="status">status</label>
+        <div>
+            <select [(ngModel)]="task.status" required='required' name="status">
+                <option  value="NEW" selected="task.status== 'NEW'" >NEW</option>
+                <option  value="PENDING" selected="task.status== 'PENDING'">PENDING</option>
+                <option  value="BLOCKED" selected="task.status== 'BLOCKED'">BLOCKED</option>
+                <option  value="COMPLETED" selected="task.status== 'COMPLETED'">COMPLETED</option>
+            </select>
+        </div>
+        </div>
+        
+		<div class="btn-group">
+			<button class="btn btn-primary" (click)="goBack()">Back</button>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</div>
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<div class="btn-group ">
+		<h4>You submitted successfully!</h4>
+		<button class="btn btn-primary" (click)="goBack()">Back</button>
+		<button class="btn btn-success" (click)="newTask()">Add</button>
+	</div>
+</div>

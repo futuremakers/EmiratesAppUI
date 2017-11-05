@@ -1,0 +1,7 @@
+<ul>
+	
+  <li *ngFor="let task of tasks" [class.selected]="task === selectedTask" (click)="onSelect(task)">
+  	<h4>{{task.id}} - {{task.name}} - {{task.status}} </h4> 
+   </li>
+</ul>
+ <task-details [task]="selectedTask"></task-details> 
