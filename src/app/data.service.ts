@@ -22,7 +22,7 @@ export class DataService {
   }
 
   getTasksByName(name: string): Promise<Task[]> {
-    const url = '/api/findByName/${name}';
+    const url = '/api/findByName/'+name;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Task)
